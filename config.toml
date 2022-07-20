@@ -1,0 +1,71 @@
+# Config file  Blair's Science Desk
+
+# basic info
+baseURL = 'https://sciencedesk.economicsfromthetopdown.com'
+languageCode = 'en-us'
+title = "Blair’s Science Desk"
+theme = "paper"
+
+# number of entries per page
+paginate = 50
+
+[Author]
+    name = "Blair Fix"
+
+# structure post links
+[permalinks]
+  post = "/:year/:month/:slug/"
+
+# menus
+[menu]
+[[menu.main]]
+  identifier = 'about'
+  name = 'About'
+  url = '/about/'
+[[menu.main]]
+  identifier = 'etd'
+  name = 'Economics from the Top Down'
+  url = 'https://economicsfromthetopdown.com/'
+[[menu.main]]
+  identifier = 'patreon'
+  name = 'Patreon'
+  url = 'https://www.patreon.com/blairfix'
+[[menu.main]]
+  identifier = 'contact'
+  name = 'Contact'
+  url = 'https://economicsfromthetopdown.com/contact/'
+
+
+
+# site parameters
+[params]
+  title = "Blair’s Science Desk"
+  description = 'Tips for doing data-driven science'
+  images = ['/images/science_desk_logo.jpg']
+  disableHLJS = true
+  twitter = 'blair_fix'               
+  github = 'blairfix'
+
+[params.twitterCard]
+    generate = true
+    title = "Blair’s Science Desk"
+    images = ['/images/science_desk_logo.png']
+    card = "summary_large_image"
+    site = "@blair_fix"
+    creator = "@blair_fix"
+
+
+[params.ogCard]
+    generate = true
+    title = "Blair’s Science Desk"
+    images = ['/images/science_desk_logo.png']
+    site = "Blair's Science Desk"
+
+
+[sitemap]
+  changefreq = 'always'
+  filename = 'sitemap.xml'
+
+
+
+

@@ -1,0 +1,125 @@
+{{  $generate := true -}}
+{{- if isset $.Params.ogCard "generate" }}
+{{-     $generate = $.Params.ogCard.generate -}}
+{{- else -}}
+{{-     if isset $.Site.Params.ogCard "generate" -}}
+{{-          $generate = $.Site.Params.ogCard.generate }}
+{{-     end -}}
+{{- end -}}
+{{- if eq $generate true -}}
+{{-     $card := "summary" -}}
+{{-     $image := false -}}
+{{-     with $.Site.Params.images -}}
+{{-         $card = "summary_large_image" -}}
+{{-         $image = (index . 0 | absURL) -}}
+{{-     end -}}
+{{-     $imageAlt := false -}}
+{{-     $title := false -}}
+{{-     $description := false -}}
+{{-     with $.Site.Params.description -}}
+{{-         $description = . }}
+{{-     end -}}
+{{-     $creator := false -}}
+{{-     if isset $.Site.Author "og" -}}
+{{-         $creator = $.Site.Author.og -}}
+{{-     end -}}
+{{-     $site := false -}}
+{{-     with $.Site.Social.og -}}
+{{-         $site = . -}}
+{{-     end -}}
+{{-     if isset $.Site.Params "ogcard" -}}
+{{-         if isset $.Site.Params.ogCard "card" -}}
+{{-             $card = $.Site.Params.ogCard.card -}}
+{{-         end -}}
+{{-         if isset $.Site.Params.ogCard "image" -}}
+{{-             $image = ($.Site.Params.ogCard.image | absURL) -}}
+{{-         end -}}
+{{-         if isset $.Site.Params.ogCard "imagealt" -}}
+{{-             $imageAlt = $.Site.Params.ogCard.imageAlt -}}
+{{-         end -}}
+{{-         if isset $.Site.Params.ogCard "title" -}}
+{{-             $title = $.Site.Params.ogCard.title -}}
+{{-         end -}}
+{{-         if isset $.Site.Params.ogCard "description" -}}
+{{-             $description = $.Site.Params.ogCard.description -}}
+{{-         end -}}
+{{-         if isset $.Site.Params.ogCard "creator" -}}
+{{-             $creator = $.Site.Params.ogCard.creator -}}
+{{-         end -}}
+{{-         if isset $.Site.Params.ogCard "site" -}}
+{{-             $site = $.Site.Params.ogCard.site -}}
+{{-         end -}}
+{{-     end -}}
+{{-     $images := $.Resources.ByType "image" -}}
+{{-     $featured := $images.GetMatch "*feature*" -}}
+{{-     $featured = cond (ne $featured nil) $featured ($images.GetMatch "*cover*") -}}
+{{-     with $featured -}}
+{{-         $card = "summary_large_image" -}}
+{{-         $image = $featured.Permalink -}}
+{{-         $imageAlt = false -}}
+{{-     else -}}
+{{-         $thumbnail := $images.GetMatch "*thumbnail*" -}}
+{{-         with $thumbnail -}}
+{{-             $card = "summary" -}}
+{{-             $image = $thumbnail.Permalink -}}
+{{-             $imageAlt = false -}}
+{{-         end -}}
+{{-     end -}}
+{{-     with .Title -}}
+{{-         $title = . -}}
+{{-     end -}}
+{{-     with .Description -}}
+{{-         $description = . -}}
+{{-     else -}}
+{{-         if .IsPage -}}
+{{-              $description = .Summary -}}
+{{-         end -}}
+{{-     end -}}
+{{-     if isset $.Params "ogcard" -}}
+{{-         if isset $.Params.ogCard "card" -}}
+{{-             $card = $.Params.ogCard.card -}}
+{{-         end -}}
+{{-         if isset $.Params.ogCard "image" -}}
+{{-             $image = ($.Params.ogCard.image | absURL) -}}
+{{-         end -}}
+{{-         if isset $.Params.ogCard "imagealt" -}}
+{{-             $imageAlt = $.Params.ogCard.imageAlt -}}
+{{-         end -}}
+{{-         if isset $.Params.ogCard "title" -}}
+{{-             $title = $.Params.ogCard.title -}}
+{{-         end -}}
+{{-         if isset $.Params.ogCard "description" -}}
+{{-             $description = $.Params.ogCard.description -}}
+{{-         end -}}
+{{-         if isset $.Params.ogCard "creator" -}}
+{{-             $creator = $.Params.ogCard.creator -}}
+{{-         end -}}
+{{-         if isset $.Params.ogCard "site" -}}
+{{-             $site = $.Params.ogCard.site -}}
+{{-         end -}}
+{{-     end -}}
+
+{{-         if ne $title false }}
+    <meta property="og:title" content="{{- $title -}}" />
+{{-         end }}
+
+{{-         if ne $description false }}
+    <meta property="og:description" content="{{- $description -}}" />
+{{-         end }}
+
+{{-     if ne $card false }}
+{{-         if ne $image false }}
+    <meta property="og:image" content="{{- $image -}}" />
+{{-         end }}
+
+{{-         if ne $creator false }}
+    <meta property="og:creator" content="{{- $creator -}}" />
+{{-         end }}
+
+{{-         if ne $site false }}
+    <meta property="og:site_name" content="{{- $site -}}" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+{{-          end }}
+{{-      end }}
+{{  end }}

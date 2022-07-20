@@ -1,0 +1,21 @@
+{
+  "name": "hugo-paper",
+  "version": "5.0.0",
+  "repository": "https://github.com/nanxiaobei/hugo-paper.git",
+  "author": "nanxiaobei <nanxiaobei@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "serve": "hugo server --baseURL=http://0.0.0.0 --bind=0.0.0.0 --buildDrafts --watch --minify --disableFastRender --themesDir=../.. --source=exampleSite",
+    "open": "open http://0.0.0.0:1313/",
+    "go": "cp exampleSite/go.default.mod exampleSite/go.mod",
+    "site": "hugo --gc --minify --themesDir=../.. --source=exampleSite --config=go.toml,config.toml",
+    "dev": "pnpm serve & pnpm open",
+    "build": "pnpm go & pnpm site"
+  },
+  "dependencies": {
+    "prettier": "^2.7.1",
+    "stylelint": "^14.9.1",
+    "stylelint-config-one": "^2.2.0"
+  }
+}
