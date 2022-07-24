@@ -215,6 +215,7 @@ img {
 }
 
 .menu {
+  float: left;
   display: flex;
   overflow: auto;
 }

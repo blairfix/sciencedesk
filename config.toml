@@ -54,12 +54,11 @@ paginate = 50
     site = "@blair_fix"
     creator = "@blair_fix"
 
-
-[params.ogCard]
-    generate = true
-    title = "Blair’s Science Desk"
-    images = ['/images/science_desk_logo.png']
-    site = "Blair's Science Desk"
+#[params.ogCard]
+#    generate = true
+#    title = "Blair’s Science Desk"
+#    images = ['/images/science_desk_logo.png']
+#    site = "Blair's Science Desk"
 
 
 [sitemap]

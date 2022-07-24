@@ -125,4 +125,25 @@
     <meta name="twitter:site" content="{{- $site -}}" />
 {{-          end }}
 {{-      end }}
+
+
+{{-         if ne $title false }}
+    <meta property="og:title" content="{{- $title -}}" />
+{{-         end }}
+
+{{-         if ne $description false }}
+    <meta property="og:description" content="{{- $description -}}" />
+{{-         end }}
+
+{{-     if ne $card false }}
+{{-         if ne $image false }}
+    <meta property="og:image" content="{{- $image -}}" />
+{{-         end }}
+{{-         if ne $site false }}
+    <meta property="og:site_name" content="Blair's Science Desk" />
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+{{-          end }}
+{{-      end }}
+
 {{  end }}
