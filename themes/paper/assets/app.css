@@ -11,7 +11,7 @@
 :root {
   --gap: 3.5rem;
   --y-gap: 8rem;
-  --wide: 140rem;
+  --wide: 180rem;
   --narrow: 80rem;
   --side: calc((var(--wide) - var(--narrow)) / 2);
   --header: 8rem;

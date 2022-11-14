@@ -6,45 +6,53 @@ languageCode = 'en-us'
 title = "Blair’s Science Desk"
 theme = "paper"
 
+
+# Enable for syntax highlighting
+pygmentsUseClasses = true
+pygmentsCodefences = true
+
+
 # number of entries per page
-paginate = 50
+paginate = 40
+
+highlight = true
 
 [Author]
     name = "Blair Fix"
 
 # structure post links
 [permalinks]
-  post = "/:year/:month/:slug/"
+    post = "/:year/:month/:slug/"
 
 # menus
 [menu]
 [[menu.main]]
-  identifier = 'about'
-  name = 'About'
-  url = '/about/'
+    identifier = 'about'
+    name = 'About'
+    url = '/about/'
 [[menu.main]]
-  identifier = 'etd'
-  name = 'Economics from the Top Down'
-  url = 'https://economicsfromthetopdown.com/'
+    identifier = 'etd'
+    name = 'Economics from the Top Down'
+    url = 'https://economicsfromthetopdown.com/'
 [[menu.main]]
-  identifier = 'patreon'
-  name = 'Patreon'
-  url = 'https://www.patreon.com/blairfix'
+    identifier = 'patreon'
+    name = 'Patreon'
+    url = 'https://www.patreon.com/blairfix'
 [[menu.main]]
-  identifier = 'contact'
-  name = 'Contact'
-  url = 'https://economicsfromthetopdown.com/contact/'
+    identifier = 'contact'
+    name = 'Contact'
+    url = 'https://economicsfromthetopdown.com/contact/'
 
 
 
 # site parameters
 [params]
-  title = "Blair’s Science Desk"
-  description = 'Tips for doing data-driven science'
-  images = ['/images/science_desk_logo.jpg']
-  disableHLJS = true
-  twitter = 'blair_fix'               
-  github = 'blairfix'
+    title = "Blair’s Science Desk"
+    description = 'Tips for doing data-driven science'
+    images = ['/images/science_desk_logo.jpg']
+    disableHLJS = true
+    twitter = 'blair_fix'               
+    github = 'blairfix'
 
 [params.twitterCard]
     generate = true
@@ -54,17 +62,27 @@ paginate = 50
     site = "@blair_fix"
     creator = "@blair_fix"
 
-#[params.ogCard]
-#    generate = true
-#    title = "Blair’s Science Desk"
-#    images = ['/images/science_desk_logo.png']
-#    site = "Blair's Science Desk"
-
-
 [sitemap]
-  changefreq = 'always'
-  filename = 'sitemap.xml'
+    changefreq = 'always'
+    filename = 'sitemap.xml'
 
 
+
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax =  false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4
 
 
