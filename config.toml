@@ -6,7 +6,6 @@ languageCode = 'en-us'
 title = "Blair’s Science Desk"
 theme = "paper"
 
-
 # Enable for syntax highlighting
 pygmentsUseClasses = true
 pygmentsCodefences = true
@@ -84,5 +83,9 @@ highlight = true
     noHl = false
     style = 'monokai'
     tabWidth = 4
+
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
 
 
