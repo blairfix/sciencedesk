@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+# clean old yml
+rm docker-compose.yml
+
+# get new compose yml
+wget https://dl.photoprism.app/docker/docker-compose.yml
+
+# install docker and docker compose
+sudo pacman -S docker docker-compose
+
+# give user permissions (reboot required)
+sudo groupadd docker
+sudo usermod -aG docker blair
+
+# enable docker daemon
+sudo systemctl enable docker.service
+

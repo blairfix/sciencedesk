@@ -1,0 +1,28 @@
+#!/usr/bin/bash
+
+echo "enter new year"
+read year_new
+
+for f in *.jpg *.JPG 
+do
+
+    # get original data
+    meta=$( exiftool -s "-datetimeoriginal" "$f" |  sed 's/[^0-9]*//g' )
+
+    # get meta data
+    year=${meta:0:4}
+    month=${meta:4:2}
+    day=${meta:6:2}
+
+    hour=${meta:8:2}
+    minute=${meta:10:2}
+    second=${meta:12:2}
+
+    # make new date
+    new=$(echo "$year_new":"$month":"$day" "$hour":"$minute":"$second")
+
+    # change all dates (don't make backup)
+    exiftool -overwrite_original "-alldates=$new" "$f"
+
+done
+

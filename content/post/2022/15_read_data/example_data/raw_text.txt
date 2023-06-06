@@ -1,0 +1,6 @@
+This is a text file.
+It is not formatted in any particular way.
+The best way to read it into R is with the readLines() function.
+
+The line above is blank.
+That's all for now.
