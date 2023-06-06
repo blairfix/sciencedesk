@@ -44,6 +44,7 @@ paginate = 40
     disableHLJS = true
     twitter = 'blair_fix'               
     github = 'blairfix'
+    color = 'white'
 
 [params.twitterCard]
     generate = true
