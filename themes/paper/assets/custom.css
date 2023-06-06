@@ -21,11 +21,11 @@
     color: #000000;
     border-radius: 0em;
     background: #efefef !important;
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 .post-content code{
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 .post-content pre {

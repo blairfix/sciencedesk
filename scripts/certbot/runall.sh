@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+# run script as normal user
+
 # copy to path
 cp 01_authenticate.sh 02_cleanup.sh /home/blair/.local/bin
 
