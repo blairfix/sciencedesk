@@ -4,17 +4,13 @@
 baseURL = 'https://sciencedesk.economicsfromthetopdown.com'
 languageCode = 'en-us'
 title = "Blair’s Science Desk"
-theme = "paper"
-
-# Enable for syntax highlighting
-pygmentsUseClasses = true
-pygmentsCodefences = true
+theme = "hugo-paper"
+enableInlineShortcodes = true
 
 
 # number of entries per page
 paginate = 40
 
-highlight = true
 
 [Author]
     name = "Blair Fix"
@@ -33,10 +29,6 @@ highlight = true
     identifier = 'etd'
     name = 'Economics from the Top Down'
     url = 'https://economicsfromthetopdown.com/'
-[[menu.main]]
-    identifier = 'patreon'
-    name = 'Patreon'
-    url = 'https://www.patreon.com/blairfix'
 [[menu.main]]
     identifier = 'contact'
     name = 'Contact'
@@ -64,8 +56,6 @@ highlight = true
 [sitemap]
     changefreq = 'always'
     filename = 'sitemap.xml'
-
-
 
 
 [markup]
